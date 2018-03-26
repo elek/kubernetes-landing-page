@@ -25,5 +25,5 @@
    logrotate:
       numToKeep: 3
    builders:
-     - shell: "make docker"
+     - shell: "make default docker"
 

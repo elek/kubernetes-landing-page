@@ -25,5 +25,7 @@ install:
 docker:
 	docker build -t elek/kubernetes-landing-page .
 
+push:
+	docker push elek/kubernetes-landing-page
 test:
 	go test -v
