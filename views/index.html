@@ -1,0 +1,30 @@
+{{define "content"}}
+
+<div class="d-flex justify-content-between flex-wrap flex-md-nowrap align-items-center pb-2 mb-3 border-bottom">
+    <h1 class="h2">Services</h1>
+</div>
+
+<div class="table-responsive">
+    <table class="table table-striped table-sm">
+        <thead>
+        <tr>
+            <th>Service name</th>
+            <th>Namespace</th>
+        </tr>
+        </thead>
+        <tbody>
+        {{ range $i, $value := .ServiceCatalog}}
+        {{ range $i, $service := $value.Services}}
+
+        <tr>
+            <td><a href="{{$service.Url}}">{{ $service.Name}}</a></td>
+            <td>{{$value.Namespace}}</td>
+            <td>{{$service.Type}}</td>
+        </tr>
+        {{ end }}
+        {{ end }}
+
+        </tbody>
+    </table>
+</div>
+{{end}}

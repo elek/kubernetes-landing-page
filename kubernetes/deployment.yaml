@@ -1,0 +1,24 @@
+apiVersion: extensions/v1beta1
+kind: Deployment
+metadata:
+  generation: 1
+  labels:
+    k8s-app: landingpage
+  name: landingpage
+  namespace: default
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      k8s-app: landingpage
+  template:
+    metadata:
+      labels:
+        k8s-app: landingpage
+      name: landingpage
+    spec:
+      containers:
+      - image: localhost:5000/elek/kubernetes-landing-page
+        imagePullPolicy: Always
+        name: landingpage
+        resources: {}

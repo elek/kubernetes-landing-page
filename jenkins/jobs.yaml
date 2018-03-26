@@ -1,0 +1,29 @@
+---
+
+- scm:
+   name: github
+   scm:
+     - git:
+        url: https://github.com/elek/kubernetes-landing-page.git
+        branches: ["master"]
+        wipe-workspace: false
+
+- wrapper:
+    name: docker-push-credentials
+    wrappers:
+      - credentials-binding:
+         - username-password-separated:
+            credential-id: 79156b8b-643c-406d-83e6-229751568be9
+            username: DOCKERHUB_USER
+            password: DOCKERHUB_PASSWORD
+
+
+- job:
+   name: kubernetes-landing-page
+   scm:
+     - github
+   logrotate:
+      numToKeep: 3
+   builders:
+     - shell: "make docker"
+

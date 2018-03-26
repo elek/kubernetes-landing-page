@@ -1,0 +1,23 @@
+package: kubernetes-landing-page
+import:
+- package: github.com/elek/gin-template
+- package: github.com/gin-gonic/gin
+  version: v1.2
+- package: github.com/shokunin/contrib
+  subpackages:
+  - ginrus
+- package: github.com/sirupsen/logrus
+  version: v1.0.5
+- package: k8s.io/api
+  subpackages:
+  - core/v1
+- package: k8s.io/apimachinery
+  subpackages:
+  - pkg/apis/meta/v1
+- package: k8s.io/client-go
+  version: v6.0.0
+  subpackages:
+  - kubernetes
+  - tools/clientcmd
+- package: github.com/spf13/cobra
+- package: github.com/spf13/pflag
