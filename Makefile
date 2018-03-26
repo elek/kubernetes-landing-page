@@ -20,7 +20,7 @@ build:
 	$(GOBUILD) $(GOFILES)
 
 install:
-	GOOS=linux GOARCH=amd64 go install $(GOFILES)
+	GOOS=linux GOARCH=amd64 go install
 
 docker:
 	docker build -t elek/kubernetes-landing-page .
